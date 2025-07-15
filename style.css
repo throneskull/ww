@@ -1,0 +1,105 @@
+body {
+  background-image: url(download.jpg);
+  color: white;
+  font-family: 'myfont';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.login-form {
+  background: rgba(0, 0, 0, 0.409);
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00b4db;
+  background-color: black;
+  border: none;
+  display: inline-flex;
+  padding: 10px 10px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+.login-form h1:hover{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00b4db;
+  font-size: 28px;
+  transition: all 0.3s ease-in-out; /* smooth animation */
+  cursor: pointer; 
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  transform: scale3d(1.0); /* zoom effect */
+}
+
+.form-group {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-family: 'myfont1';
+  letter-spacing: 2px;  
+}
+
+.form-group input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid white;
+  background: black;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+#button {
+  padding: 12px;
+  background: #00b4db;
+  color: black;
+  font-family: 'myfont';
+  font-weight: lighter;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+  position: initial;
+}
+
+#button.escaped {
+  position: absolute;
+  z-index: 999;
+}
+
+#button:hover {
+  background-color: black;
+  color: #00b4db;
+  box-shadow: 0 0 15px #00b4db, 0 0 15px #00b4db;
+  transform: rotate(360deg);
+}
+
+@font-face{
+    font-family: 'myfont';
+    src: url(font.otf);
+}
+
+@font-face{
+    font-family: 'myfont1';
+    src: url(font1.otf);
+}

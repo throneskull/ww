@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <div class="login-form">
+    <h1>~ Login ~</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="Username">Username :</label>
+        <input type="text" id="Username" placeholder="Username" />
+      </div>
+      <div class="form-group">
+        <label for="Password">Password :</label>
+        <input type="password" id="Password" placeholder="Password" />
+      </div>
+      <button type="submit" id="button">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const username = document.getElementById('Username');
+    const password = document.getElementById('Password');
+    const btn = document.getElementById('button');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const userVal = username.value.trim();
+      const passVal = password.value.trim();
+
+      if (userVal === '' || passVal === '') {
+        
+        // Move button randomly
+        const x = Math.floor(Math.random() * 200) - 100; // -100 to +100
+        const y = Math.floor(Math.random() * 200) - 100;
+
+        btn.classList.add('escaped');
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+        btn.innerText = 'BC* fill tou krle phele form ko!';
+      }
+    });
+
+    // When user types something, reset button
+    [username, password].forEach((input) => {
+      input.addEventListener('input', () => {
+        if (username.value.trim() !== '' && password.value.trim() !== '') {
+          btn.classList.remove('escaped');
+          btn.style.transform = 'translate(0, 0)';
+          btn.innerText = 'Submit';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
